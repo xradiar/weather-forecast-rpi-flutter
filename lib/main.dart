@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/logic/api.dart';
+import 'package:myapp/podo/weatherforecast.dart';
 
 void main() {
+   Future<WeatherForecast> futureWeatherForecast;
+
+   futureWeatherForecast = fetchWeatherForecast();
   runApp(MyApp());
 }
 
@@ -50,6 +55,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+ 
   int _counter = 0;
 
   void _incrementCounter() {
