@@ -1,18 +1,18 @@
-import 'weatherforecast/weather.dart';
-import 'weatherforecast/temperature.dart';
+import 'weatherforecast/DailyForecasts.dart';
+import 'weatherforecast/headline.dart';
 
 
 class WeatherForecast{
-  final Temperature temperature;
-  final Weather weather;
-
-  WeatherForecast({this.temperature, this.weather});
+  final List<DailyForecasts> dailyForecasts;
+  WeatherForecast({this.dailyForecasts});
+//  Need to get:
+//    Today's forecast
+//    Forecast for next 5 days
 
 // TODO Match new JSON format
   factory WeatherForecast.fromJson(Map<String, dynamic> json){
-    Temperature tempTemp = Temperature(maxTemperature: json['daily'][0]['temp']['max'].toString(),minTemperature: json['daily'][0]['temp']['min'].toString());
-    Weather tempWeather = Weather(weatherStatus: json['daily'][0]['weather'][0]['main'].toString(), description: json['daily'][0]['weather'][0]['description'].toString(), icon: json['daily'][0]['weather'][0]['icon'].toString());
-    var weatherForecast = WeatherForecast(temperature: tempTemp, weather: tempWeather);
+    DailyForecast dailyForecast = DailyForecast();
+    var weatherForecast = WeatherForecast(dailyForecasts: tempWeather);
         return weatherForecast;
   }
 
