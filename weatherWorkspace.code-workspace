@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "TTGO",
+			"path": "..\\..\\PlatformIO\\Projects\\TTGO"
+		}
+	]
+}
