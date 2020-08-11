@@ -1,6 +1,4 @@
-import 'dart:collection';
-
-class Forecast{
+class Forecast {
   final String date;
   final String minTemp;
   final String maxTemp;
@@ -9,13 +7,25 @@ class Forecast{
   final String dayIcon;
   final String dayIconPhrase;
   final String dayLongPhrase;
-  
-  
-  Forecast({this.dailyForecasts});
 
+  Forecast(
+      {this.date,
+      this.minTemp,
+      this.maxTemp,
+      this.dayPrecipitationProbability,
+      this.dayIcon,
+      this.dayIconPhrase,
+      this.dayLongPhrase});
 
-  setContents(){
-    
+  factory Forecast.generateForecast(Map<String, dynamic> dailyForecast) {
+    Forecast forecast = Forecast(
+        date: dailyForecast["Date"],
+        minTemp: dailyForecast["Temperature"]["Minimum"]["Value"].toString(),
+        maxTemp: dailyForecast["Temperature"]["Maximum"]["Value"].toString(),
+        dayPrecipitationProbability: dailyForecast["Day"]["PrecipitationProbability"].toString(),
+        dayIcon: dailyForecast["Day"]["Icon"].toString(),
+        dayIconPhrase: dailyForecast["Day"]["IconPhrase"],
+        dayLongPhrase: dailyForecast["Day"]["LongPhrase"]);
+    return forecast;
   }
-
 }
