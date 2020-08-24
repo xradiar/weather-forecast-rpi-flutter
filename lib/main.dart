@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/logic/api.dart';
-import 'package:myapp/podo/weatherforecast/DailyForecasts.dart';
-import 'package:myapp/podo/weatherforecast/Forecast.dart';
 import 'package:myapp/resources/ForecastButton.dart';
-
-import 'resources/WeatherCard.dart';
 
 void main() {
   // Future<DailyForecasts> futureWeatherForecast;
