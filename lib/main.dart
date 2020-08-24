@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/logic/api.dart';
-import 'package:myapp/podo/weatherforecast.dart';
+import 'package:myapp/podo/weatherforecast/DailyForecasts.dart';
 
 void main() {
-   Future<WeatherForecast> futureWeatherForecast;
+  Future<DailyForecasts> futureWeatherForecast;
 
-   futureWeatherForecast = fetchWeatherForecast();
+  futureWeatherForecast = fetchWeatherForecast();
   runApp(MyApp());
 }
 
