@@ -22,7 +22,7 @@ class WeatherCard extends StatelessWidget {
           ),
           Text(dailyForecasts.forecastList[index].dayIconPhrase),
           RichText(
-            textScaleFactor: 5.0,
+            textScaleFactor: 6.0,
             text: TextSpan(
               text:
                   "${dailyForecasts.forecastList[index].dayPrecipitationProbability}%",
