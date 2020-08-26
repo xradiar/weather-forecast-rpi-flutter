@@ -21,8 +21,10 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  #http to access apis
+  # http to access apis
   http: "0.12.1"
+  # plugins
+  intl: ^0.16.1
 
   flutter:
     sdk: flutter

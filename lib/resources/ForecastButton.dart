@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:myapp/logic/api.dart';
 import 'package:myapp/podo/weatherforecast/DailyForecasts.dart';
 
-import 'WeatherCard.dart';
+import 'ForecastCard.dart';
 
 class ForecastButton extends StatelessWidget {
   final int index;
@@ -42,11 +42,16 @@ class ForecastButton extends StatelessWidget {
                           color: Colors.blueGrey[700],
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20.0)),
-                          child: WeatherCard(
-                            index: index,
-                            dailyForecasts: forecastItems,
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: ForecastCard(
+                              index: index,
+                              dailyForecasts: forecastItems,
+                            ),
                           ),
-                          onPressed: displayForecast,
+                          onPressed: () {
+                            displayForecast(context);
+                          },
                         ),
                       );
                     },
@@ -58,8 +63,9 @@ class ForecastButton extends StatelessWidget {
     );
   }
 
-  void displayForecast() {
+  void displayForecast(var context) {
     // TODO:Show details of forecast
-    print("TESTTEST");
+    print(DateTime.now());
+    Scaffold.of(context).openDrawer();
   }
 }
