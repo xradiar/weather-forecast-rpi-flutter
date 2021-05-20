@@ -40,7 +40,13 @@ class ForecastCard extends StatelessWidget {
                 style: DefaultTextStyle.of(context).style,
               )),
           RichText(
-              textScaleFactor: 8.0,
+              textScaleFactor: 6.0,
+              text: TextSpan(
+                text: '${dailyForecasts.forecastList[index].maxTemp}°C',
+                style: DefaultTextStyle.of(context).style,
+              )),
+          RichText(
+              textScaleFactor: 4.0,
               text: TextSpan(
                 text:
                     '${dailyForecasts.forecastList[index].dayPrecipitationProbability}%',
